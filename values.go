@@ -1,41 +1,38 @@
 package main
 
 import "fmt"
-import "math"
-// import (
-// 	"fmt"
-// 	"math"
-// ) -> other type of import(s)
 
 const s string = "constant"
 
 func main() {
-	var a = "initial"
-	fmt.Println(a)
+	i := 1
 
-	var b,c int = 1,2
-	fmt.Println(b+c)
-	fmt.Println(b,c)
+	for i <= 3 {
+		fmt.Println(i)
+		i += 1
+	}
 
-	var d = true
-	fmt.Println(d)
+	for j := 0; j < 3; j++ {
+		fmt.Println(j)
+	}
 
-	var e int
-	fmt.Println(e) // e = 0
+	for i := range 3 {
+		fmt.Println("range", i)
+	}
 
-	f := "apple"
-	fmt.Println(f)
+	fmt.Println(0)
+	fmt.Print(1)
+	fmt.Printf("2")
 
-	fmt.Println(s)
-	fmt.Println(s + "a")
+	for {
+		fmt.Println("loop")
+		break
+	}
 
-	const n = 500000000
-	const g = 3e20 / n
-
-	fmt.Println(g)
-	fmt.Println(int64(g))
-	fmt.Println(math.Sin(n)) // sinus (trigono)
-
-
-	
+	for n:= range 6 {
+		if n%2 == 0 {
+			continue
+		}
+		fmt.Println(n)
+	}
 }
