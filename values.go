@@ -5,34 +5,17 @@ import "fmt"
 const s string = "constant"
 
 func main() {
-	i := 1
-
-	for i <= 3 {
-		fmt.Println(i)
-		i += 1
+	if 7%2 == 0 {
+		fmt.Println("7 even")
+	} else {
+		fmt.Println("7 odd")
 	}
 
-	for j := 0; j < 3; j++ {
-		fmt.Println(j)
-	}
-
-	for i := range 3 {
-		fmt.Println("range", i)
-	}
-
-	fmt.Println(0)
-	fmt.Print(1)
-	fmt.Printf("2")
-
-	for {
-		fmt.Println("loop")
-		break
-	}
-
-	for n:= range 6 {
-		if n%2 == 0 {
-			continue
-		}
-		fmt.Println(n)
+	if num := 9; num < 0 { // initialization in if-else scope
+		fmt.Println(num, "is negative")
+	} else if num < 10 {
+		fmt.Println(num, "is 1 digit")
+	} else {
+		fmt.Println(num, "is multiple digits")
 	}
 }
