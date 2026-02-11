@@ -1,21 +1,53 @@
 package main
 
 import "fmt"
-
-const s string = "constant"
+import "time"
 
 func main() {
-	if 7%2 == 0 {
-		fmt.Println("7 even")
-	} else {
-		fmt.Println("7 odd")
+	i := 2
+
+	fmt.Print("Write ", i, " as ")
+	switch i {
+	case 1: // if i == 1
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
 	}
 
-	if num := 9; num < 0 { // initialization in if-else scope
-		fmt.Println(num, "is negative")
-	} else if num < 10 {
-		fmt.Println(num, "is 1 digit")
-	} else {
-		fmt.Println(num, "is multiple digits")
+	switch time.Now().Weekday() {
+	case time.Saturday, time.Sunday:// multiple expression
+		fmt.Println("weekend")
+	default: // acsts like otherwise
+		fmt.Println("weekday")
 	}
+
+
+	t := time.Now()
+	switch { //switch without an expression -> if-else logic
+	case t.Hour() < 12:
+		fmt.Println("before noon")
+	default:
+		fmt.Println("after noon")
+	}
+
+
+	// compare types - never seen this or im just dumb - in Python its isInstance
+	whatAmI := func (i interface{})  { // syntax func
+		switch t := i.(type) {
+		case bool:
+			fmt.Println("bool")
+		case int:
+			fmt.Println("int")
+		default:
+			fmt.Printf("type %T\n", t)
+		}
+	}
+
+	whatAmI(true)
+	whatAmI(1)
+	whatAmI("hey")
+
+
 }
